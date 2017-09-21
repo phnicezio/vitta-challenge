@@ -1,0 +1,4 @@
+spring:
+  profiles: docker
+  datasource:
+    url: jdbc:mysql://vitta-challenge-mysql:3306/vitta-challenge

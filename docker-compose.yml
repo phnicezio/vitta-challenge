@@ -1,0 +1,58 @@
+version: '3'
+services:
+    nginx:
+        build:
+            dockerfile: ./nginx/nginx.dockerfile
+            context: .
+        image: phnicezio/nginx
+        container_name: nginx
+        ports:
+            - "80:80"
+        networks: 
+            - vitta-network
+        depends_on: 
+            - "apiNode1"
+            - "apiNode2"
+
+    mysqldb:
+        image: mysql:latest
+        container_name: vitta-challenge-mysql
+        volumes:
+            - /opt/mysql:/var/lib/mysql
+        networks: 
+            - vitta-network
+        environment:
+          MYSQL_ROOT_PASSWORD: pwd
+          MYSQL_DATABASE: vitta-challenge
+          MYSQL_USER: mysql
+          MYSQL_PASSWORD: mysql 
+  
+    apiNode1:
+        build:
+            dockerfile: Dockerfile
+            context: .
+        image: phnicezio/vitta-challenge-api
+        container_name: vitta-challenge-api-1
+        ports:
+            - 8080
+        networks: 
+            - vitta-network
+        depends_on:
+            - mysqldb
+
+    apiNode2:
+        build:
+            dockerfile: Dockerfile
+            context: .
+        image: phnicezio/vitta-challenge-api
+        container_name: vitta-challenge-api-2
+        ports:
+            - 8080
+        networks: 
+            - vitta-network
+        depends_on:
+            - mysqldb
+
+networks: 
+    vitta-network:
+        driver: bridge

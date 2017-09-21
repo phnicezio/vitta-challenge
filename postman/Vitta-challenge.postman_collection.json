@@ -1,0 +1,225 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Vitta-challenge",
+		"_postman_id": "f9147616-1403-e292-f49e-c2c3ee5263d7",
+		"description": "Vitta-challenge-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "squares",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:80/vitta-challenge/v1/squares/:x/:y",
+					"request": {
+						"url": {
+							"raw": "http://localhost:80/vitta-challenge/v1/squares/:x/:y",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"vitta-challenge",
+								"v1",
+								"squares",
+								":x",
+								":y"
+							],
+							"query": [],
+							"variable": [
+								{
+									"key": "x",
+									"value": "1"
+								},
+								{
+									"key": "y",
+									"value": "2"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:80/vitta-challenge/v1/squares/:x/:y/paint",
+					"request": {
+						"url": {
+							"raw": "http://localhost:80/vitta-challenge/v1/squares/:x/:y/paint",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"vitta-challenge",
+								"v1",
+								"squares",
+								":x",
+								":y",
+								"paint"
+							],
+							"query": [],
+							"variable": [
+								{
+									"key": "x",
+									"value": "1"
+								},
+								{
+									"key": "y",
+									"value": "2"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "http://localhost:80/vitta-challenge/territories",
+			"request": {
+				"url": "http://localhost:80/vitta-challenge/v1/territories",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:80/vitta-challenge/territories/:id",
+			"request": {
+				"url": {
+					"raw": "http://localhost:80/vitta-challenge/v1/territories/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"vitta-challenge",
+						"v1",
+						"territories",
+						":id"
+					],
+					"query": [],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:80/vitta-challenge/v1/territories/territory/:id",
+			"request": {
+				"url": {
+					"raw": "http://localhost:80/vitta-challenge/v1/territories/territory/:id?withpainted=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"vitta-challenge",
+						"v1",
+						"territories",
+						"territory",
+						":id"
+					],
+					"query": [
+						{
+							"key": "withpainted",
+							"value": "true",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:80/vitta-challenge/territories",
+			"request": {
+				"url": "http://localhost:80/vitta-challenge/v1/territories",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"A\",\n  \"start\": { \"x\": 0, \"y\": 0 },\n  \"end\": { \"x\": 50, \"y\": 50 }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:80/vitta-challenge/territories/:id",
+			"request": {
+				"url": {
+					"raw": "http://localhost:80/vitta-challenge/v1/territories/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"vitta-challenge",
+						"v1",
+						"territories",
+						":id"
+					],
+					"query": [],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
